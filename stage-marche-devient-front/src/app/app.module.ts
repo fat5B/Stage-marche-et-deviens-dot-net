@@ -10,26 +10,37 @@ import { JwtInterceptor } from './Services/jwt.interceptor';
 import { SejourComponent  } from './Components/sejour/sejour.component';
 import { DetailOffreComponent } from './detail-offre/detail-offre.component';
 import { CsrfInterceptor } from './Services/csrf-interceptor';
+import { routes} from './app.routes';
+import { RouterModule } from '@angular/router';
+import { PageDevisComponent } from './page-devis/page-devis.component';
+
 
 
 
 @NgModule({
   declarations: [
+    AppComponent,
+    NavbarComponent,
+    ConceptComponent,
+    DetailOffreComponent,
+    SejourComponent,
+    PageDevisComponent
   
      
   
     // Ajoutez d'autres composants ici
   ],
   imports: [
-    NavbarComponent,
-    AppComponent,
-    ConceptComponent,
-    DetailOffreComponent,
-    SejourComponent,
     BrowserModule,
+    RouterModule.forRoot(routes)
     
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }, provideHttpClient(), { provide: HTTP_INTERCEPTORS, useClass: CsrfInterceptor, multi: true }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+     provideHttpClient(), { provide: HTTP_INTERCEPTORS, useClass: CsrfInterceptor, multi: true }
+    
+  ],
+  bootstrap: [AppComponent]
   
 })
 export class AppModule { }

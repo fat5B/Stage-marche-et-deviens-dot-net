@@ -22,6 +22,7 @@ namespace stage_marche_devient.Data
         public virtual DbSet<TagPublicationModel> Tag_Publication { get; set; }
         public virtual DbSet<AuditLog> AuditLogs { get; set; }
 
+        public virtual DbSet<Devis> DevisForm { get; set; }
 
     }
 }

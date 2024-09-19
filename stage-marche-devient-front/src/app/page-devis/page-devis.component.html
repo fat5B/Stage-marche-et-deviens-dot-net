@@ -3,7 +3,7 @@
     (entreprise ou particulier)</h1>
 
 <section>
-    <form #devisForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #devisForm="ngForm" (ngSubmit)="onSubmit(devisForm)">
         <legend class="legend">Vos coordonnées</legend>
         <div class="contact">
             <div id="nom" class="slide-in-left">
@@ -59,7 +59,6 @@
             <label class="legend" for="PlusdInformation">Veuillez préciser votre demande</label>
             <textarea name="Informations" id="PlusdInformation" ngModel maxlength="250" placeholder="Votre message..."></textarea>
         </div>    
-        <input id="boutonDevis" type="submit" value="Envoyer">
+        <button id="boutonDevis" type="submit">Envoyer</button>
     </form>
-    <button (click)="getCsrfToken()">Tester CSRF Token</button>
 </section>
